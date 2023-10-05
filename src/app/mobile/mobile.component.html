@@ -1,0 +1,43 @@
+<!-- <img [src]="mobilearray[0].image" alt=""> -->
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4" *ngFor="let mobile of mobilearray">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-fluid img-magnifier-container"  *ngIf="mobile.image.length > 0; else noImg" [src]="mobile.image"
+                            [alt]="mobile.name" [title]="mobile.name" >
+
+                        <ng-template #noImg>
+                            <p class=" text-muted noImg m-0 d-flex justify-content-center align-items-center"> No
+                                Preview is available</p>
+                        </ng-template>
+                    </div>
+
+                    <div class="col-md-4">
+                        
+                        <h2>{{mobile.name}}</h2>
+                        <h4>Brand: {{mobile.brand}}</h4>
+                        <h5> <ul><li class="list-style-type: circle"> {{mobile.rom}} ROM</li></ul></h5>
+                        <h5> <ul><li class="list-style-type: circle"> 15.49 cm (6.1 inch) Super Retina XDR Display</li></ul></h5>
+                        <h5> <ul><li class="list-style-type: circle">  12MP + 12MP | 12MP Front Camera</li></ul></h5>
+                        <h5> <ul><li class="list-style-type: circle"> A15 Bionic Chip Processor</li></ul></h5>
+                        <h5> <ul><li class="list-style-type: circle">Brand Warranty for 1 Year </li></ul></h5>
+                        <div  class="btn">  4.8*</div>
+                        <span class="" > &nbsp; 2,61,051 Ratings &  12,830 Reviews</span><br><br>
+                        <h4  class="btn-1  ">Buy Now</h4>                       
+
+                    </div>
+                    <div class="col-md-4">
+                        <h2><i class="font-weight-bolder d-flex justify-content-end "> ₹{{mobile.price}}</i></h2>
+                        <h6 class="d-flex justify-content-end text-success">Sale Price Live</h6>
+                        <h6 class="d-flex justify-content-end text-danger">Only few left</h6>
+                        <b class="d-flex justify-content-end text-warning">12% off</b>
+                        <b class="d-flex justify-content-end text-monospace text-muted mb-4">Free delivery</b> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

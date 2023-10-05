@@ -1,0 +1,30 @@
+<!-- <p class="alert alert-info" *ngIf="price === 5">The price is 5</p>
+<p class="alert alert-info" *ngIf="price === 20">The price is 20</p>
+<p class="alert alert-info" *ngIf="price === 30">The price is 30</p> -->
+
+<!-- <ul class="nav nav-pills mb-4">
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{
+            'active' : price === '5'}" (click)="price = '5'" class="nav-link active">set to 5</a></li>
+
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{
+            'active' : price === '20'}" (click)="price = '20'" class="nav-link">set to 20</a></li>
+
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{
+            'active' : price === '50'}" (click)="price = '50'" class="nav-link">set to 50</a></li>
+</ul> -->
+
+<ul class="nav nav-pills mb-3">
+    <li *ngFor="let tabHead of tabHeadings" class="nav-item">
+        <a href="javascript:;" class="nav-link" [ngClass]="{
+            'active' : price === tabHead
+        }" (click)="price = tabHead">
+            set to {{tabHead}}
+        </a>
+    </li>
+</ul>
+
+<div [ngSwitch]="price">
+    <p class="alert alert-info" *ngSwitchCase="'5'">The price is 5</p>
+    <p class="alert alert-info" *ngSwitchCase="'20'">The price is 20</p>
+    <p class="alert alert-info" *ngSwitchCase="'50'">The price is 50</p>
+</div>

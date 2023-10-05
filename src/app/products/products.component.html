@@ -1,0 +1,40 @@
+<button class="btn btn-warning mr-3" (click)="onProductAdd()" [disabled]="!isFormvalid">Add Product</button>
+
+<button class="btn btn-warning" (click)="onProductRemove()" [disabled]=" count === 0 ">Remove Product</button>
+
+<hr>
+
+
+
+<p class="alert alert-info">
+    {{productsStatus}}
+</p>
+
+
+
+<input type="text" class="form-control" (keyup)="onProductSearch($event)">
+
+<!-- event binding -->
+
+<br>
+
+<input type="text" class="form-control"
+[(ngModel)]="productSearchValue"
+>
+<br>
+<p [innerHTML]="productSearchValue" 
+*ngIf="productSearchValue.length > 0"
+class="aler alert-danger"></p>
+
+<app-product></app-product>
+<app-product></app-product>
+
+<input #username type="text" class="form-control mb-4">    <!-- //username- element reference -->
+
+<button class="btn btn-info"
+(click)="onClick(username)">click</button>
+
+<button class="btn btn-danger"
+(click)="getUsername()">
+Get UserName
+</button>

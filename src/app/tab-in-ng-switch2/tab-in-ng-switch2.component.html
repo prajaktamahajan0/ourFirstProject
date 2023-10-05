@@ -1,0 +1,18 @@
+<ul class="nav nav-pills">
+    <li class="nav-item" *ngFor="let skill of skillsArr">
+        <a href="javascript:;" [ngClass]="{
+            'active' : selectedSkill === skill
+        }" (click)="selectedSkill = skill" class="nav-link"> {{skill}} </a>
+    </li>
+</ul>
+
+<div class="tab-body card" [ngSwitch]="selectedSkill">
+    <ng-container *ngFor="let skill of skillsArr">
+        <div class="tab-panel card-body" *ngSwitchCase="skill">
+            <strong>{{skill}}</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio officiis vero. Cum impedit ullam
+            omnis,
+            accusantium voluptates quae error?
+        </div>
+    </ng-container>       
+</div>

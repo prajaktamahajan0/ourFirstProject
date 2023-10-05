@@ -1,0 +1,26 @@
+<p
+[ngStyle]="{backgroundColor: getBgColor()}"
+[ngClass]="{
+    'text-white' : isProdAvl,
+    'text-danger' : isProdAvl,
+    'p-4' : isProdAvl,
+    'p-3' : !isProdAvl
+}">                                     <!-- attr directives -->
+    <!-- the product is {{pName}} with id {{pId}} and status is {{pStatus}}          //string interpolation -->
+
+    <strong *ngIf="isProdAvl; else outOfStock">and Product is available</strong>
+    
+    <ng-template #outOfStock> <strong *ngIf="isProdAvl">and Product is Out of stock</strong></ng-template>
+   
+</p>
+
+<hr>
+
+<p [innerHTML]="Iphone"></p>
+
+<!-- property binding -->
+<!-- document object -->
+
+
+<input type="text" [value]="Iphone" class="form-control">
+
